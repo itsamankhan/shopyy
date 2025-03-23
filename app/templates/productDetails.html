@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="container-fluid w-100">
+        <div class="row w-100 p-5">
+            <div class="col-md-6">
+                <img src="/media/{{product.image}}" alt="product img" class="img-fluid" />
+            </div>
+            <div class="col">
+                <h1>{{product.title}}</h1>
+                <p>{{product.description}}</p>
+                <p class="fw-bold">${{product.discounted_price}} <small class="fw-medium text-decoration-line-through">{{product.selling_price}}</small></p>
+                <a href="" class="btn shadow-lg btn-success">Add to Cart</a>
+                <a href="" class="btn shadow-lg btn-danger">Buy Now</a>
+                <hr>
+                <h3>Available Offers</h3>
+                <ul>
+                    <li>
+                        Bank Offer5% Unlimited Cashback on Flipkart Axis Bank Credit CardT&C
+                    </li>
+                    <li>
+                        Bank Offer10% instant discount on SBI Credit Card EMI Transactions, up to ₹1,500 on orders of ₹5,000 and aboveT&C
+                    </li>
+                    <li>
+                        Bank Offer10% off up to ₹1,250 on all Axis Bank Credit Card (incl. migrated ones) EMI Txns of ₹7,499 and aboveT&C
+                    </li>
+                    <li>    
+                        Special PriceGet at flat ₹839T&C
+                    </li>
+                    <li>    
+                        Bank Offer10% off up to ₹1,250 on Flipkart Axis Bank Credit Card EMI Txns, on orders of ₹7,499 and aboveT&C
+                    </li>
+                    <li>   
+                        Bank Offer12% off up to ₹1,200 on Axis Bank RuPay Credit Card Txns of ₹5,000 and aboveT&C
+                    </li>
+                    <li>    
+                        Bank Offer10% off up to ₹1,250 on IDFC FIRST Bank Credit EMI Txns on orders of ₹5,000 and aboveT&C
+                    </li>
+                    <li>    
+                        Bank Offer5% off up to ₹750 on IDFC FIRST Power Women Platinum and Signature Debit Cards. Min Txn Value: ₹5000T&C
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

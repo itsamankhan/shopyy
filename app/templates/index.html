@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% comment %} 
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias beatae, voluptatum laboriosam suscipit voluptate ipsum nam perferendis, cum nihil fuga, eius non. Ad cumque, ratione veniam perferendis reiciendis numquam quidem!
+
+ {% endcomment %}
+
+{% block content %}
+
+
+    <section class="featured">
+        <div class="section-heading">
+            <h1>Featured Product</h1>
+        </div>
+        <div class="owl-carousel owl-theme">
+            <div class="item">
+                <img src="/static/img/pexels-mithulvarshan-3697717.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="/static/img/pexels-mithulvarshan-3697717.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="/static/img/pexels-mithulvarshan-3697717.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="/static/img/pexels-mithulvarshan-3697717.jpg" alt="">
+            </div>
+
+            <div class="item">
+                <img src="/static/img/pexels-mithulvarshan-3697717.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="/static/img/pexels-mithulvarshan-3697717.jpg" alt="">
+            </div>
+        </div>
+    </section>
+
+
+    <section class="banner">
+        <div class="content text-center text-dark bg-light" >
+            <h1>10% off Discount</h1>
+            <main>
+                <p>Subscribe us to get 10% off on all the purchase.</p>
+                <button class="btn-dark btn px-5">Subscribe us now!</button>
+            </main>
+        </div>
+    </section>
+
+    <section class="shoes">
+        <div class="section-heading d-flex justify-content-between align-items-center px-3">
+            <h1>Shoes</h1>
+            <a href="" class="text-light ">View All</a>
+        </div>
+        <div class="row m-0 p-4">
+
+            {% for i in shoes %}
+            <div class="col-md-3  my-4">
+            <a href="{% url "details" i.id %}">
+                <img class="rounded-top-3 object-fit-cover card-img-top" src="/media/{{i.image}}" alt="" style=" height: 55vh;">
+                <div class="card-text d-flex justify-content-between">
+                    <h5>{{i.title}}</h5>
+                    <h5>${{i.discounted_price}}</h5>
+                </div>
+                <div class="card-btns">
+                    <form action="{% url "addCart" %}" class="d-inline" method="get">
+                        <input type="hidden" name="pro_id" value="{{ i.id }}">
+                        <button type="submit" class="btn btn-light">Add to Cart</button>
+                    </form>
+                    <a href="" class="btn btn-dark">Buy now</a>
+                </div>
+            </a>
+            </div>
+
+            {% endfor %}
+
+        </div>
+    </section>
+
+{% endblock content %}
